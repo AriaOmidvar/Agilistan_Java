@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Books List</title>
+</head>
+<body>
+<h1>Books List</h1>
+
+<form method="get" action="/books">
+    <input type="text" name="title" placeholder="Title">
+    <input type="number" name="publicationYear" placeholder="Publication Year">
+    <input type="text" name="authors" placeholder="Authors">
+    <button type="submit">Filter</button>
+</form>
+
+<h2>All Books</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Publication Year</th>
+        <th>Authors</th>
+    </tr>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.publicationYear}"></td>
+        <td th:text="${book.authors}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
