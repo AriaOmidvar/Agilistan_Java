@@ -17,8 +17,8 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NonNull
-    private String title;
-    private int publicationYear;
-    private String authors;
+    public String title;
+    public int publicationYear;
+    public String authors;
     private int edition;
 }
