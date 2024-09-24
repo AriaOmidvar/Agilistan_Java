@@ -1,15 +1,23 @@
 package com.example.Agilistan;
 
+import com.example.Agilistan.controller.ContentController;
+import com.example.Agilistan.repository.ContentRepository;
+import com.example.Agilistan.repository.PersonRepository;
+import com.example.Agilistan.service.ContentService;
+import com.example.Agilistan.service.PersonService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackageClasses = {
-		com.example.Agilistan.controller.BookController.class,
-		com.example.Agilistan.entity.Book.class,
-		com.example.Agilistan.repository.BookRepository.class,
-		com.example.Agilistan.service.BookService.class})
+		ContentController.class,
+		com.example.Agilistan.entity.Content.class,
+		com.example.Agilistan.entity.Person.class,
+		ContentRepository.class,
+		PersonRepository.class,
+		ContentService.class,
+		PersonService.class})
 public class AgilistanApplication {
 
 	public static void main(String[] args) {

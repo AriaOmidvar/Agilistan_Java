@@ -2,17 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Add Book</title>
+    <title>Add Content</title>
 </head>
 
 <body>
 
-<h2>Add a New Book</h2>
-<form method="post" action="/books/add">
+<h2>Add a New Content</h2>
+<form method="post" action="/contents/add">
     <input type="text" name="title" placeholder="Title" required>
     <input type="number" name="publicationYear" placeholder="Publication Year" required>
-    <input type="text" name="authors" placeholder="Authors" required>
-    <button type="submit">Add Book</button>
+    <input type="text" name="authorName" placeholder="Author's Name" required>
+    <button type="submit">Add Content</button>
 </form>
 
 </body>

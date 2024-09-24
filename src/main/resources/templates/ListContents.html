@@ -2,30 +2,27 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Books List</title>
+    <title>Contents List</title>
 </head>
 
 <body>
 
-<h1>Books List</h1>
-<form method="get" action="/books">
+<h1>Contents List</h1>
+<form method="get" action="/contents">
     <input type="text" name="title" placeholder="Title">
     <input type="number" name="publicationYear" placeholder="Publication Year">
-    <input type="text" name="authors" placeholder="Authors">
     <button type="submit">Filter</button>
 </form>
 
-<h2>All Books</h2>
+<h2>All Contents</h2>
 <table>
     <tr>
         <th>Title</th>
         <th>Publication Year</th>
-        <th>Authors</th>
     </tr>
-    <tr th:each="book : ${books}">
-        <td th:text="${book.title}"></td>
-        <td th:text="${book.publicationYear}"></td>
-        <td th:text="${book.authors}"></td>
+    <tr th:each="content : ${contents}">
+        <td th:text="${content.title}"></td>
+        <td th:text="${content.publicationYear}"></td>
     </tr>
 </table>
 
