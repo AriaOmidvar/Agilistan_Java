@@ -5,7 +5,9 @@ import com.example.Agilistan.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PersonService {
@@ -19,6 +21,18 @@ public class PersonService {
         } else {
             return personRepository.findAll();
         }
+    }
+
+    public List<Person> getAllPersons() {
+        return personRepository.findAll();
+    }
+
+    public List<String> getAllNames() {
+        return personRepository.findAll().stream().map(Person::getName).collect(Collectors.toList());
+    }
+
+    public Person getPersonByName(String name) {
+            return personRepository.findByName(name).getFirst();
     }
 
     public Person savePerson(Person person) {

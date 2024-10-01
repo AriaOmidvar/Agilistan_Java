@@ -2,19 +2,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Add Content by New Author</title>
+    <title>Add Content by Existing Author</title>
 </head>
 
 <body>
 
-<h2>Add a New Content from a New Author</h2>
-<form method="post" action="/contents/add">
+<h2>Add a New Content from an Existing Author</h2>
+<form method="post" action="/contents/addByAuthor">
     <select name="contentType">
         <option th:each="contentType : ${contentTypes}" th:text="${contentType}"/>
     </select>
     <input type="text" name="title" placeholder="Title" required>
-    <input type="number" name="publicationYear" placeholder="Publication Year" >
-    <input type="text" name="authorName" placeholder="Author's Name" >
+    <input type="number" name="publicationYear" placeholder="Publication Year">
+    <select name="person">
+        <option th:each="person : ${persons}" th:text="${person.name}"/>
+    </select>
     <button type="submit">Add Content</button>
 </form>
 
